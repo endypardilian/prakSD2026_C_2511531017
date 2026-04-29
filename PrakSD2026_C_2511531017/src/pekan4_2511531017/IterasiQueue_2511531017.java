@@ -9,6 +9,7 @@ public class IterasiQueue_2511531017 {
 		q.add("Praktikum");
 		q.add("Struktur");
 		q.add("Data");
+		q.add("Dan");
 		q.add("Algoritma");
 		Iterator<String> iterator = q.iterator();
 		while (iterator.hasNext()) {
