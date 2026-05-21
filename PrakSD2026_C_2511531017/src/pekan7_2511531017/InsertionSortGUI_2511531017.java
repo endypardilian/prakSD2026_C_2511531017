@@ -17,6 +17,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 public class InsertionSortGUI_2511531017 extends JFrame {
@@ -43,12 +44,13 @@ public class InsertionSortGUI_2511531017 extends JFrame {
 		setSize(750,400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		getContentPane().setLayout(new BorderLayout());
+		setLayout(new BorderLayout());
 		
 		JPanel inputPanel_1017 = new JPanel(new FlowLayout());
+		inputField_1017 = new JTextField(30);
         setButton_1017 = new JButton("Set Array");
-        
         inputPanel_1017.add(new JLabel("Masukkan angka (pisahkan dengan koma):"));
+        inputPanel_1017.add(inputField_1017);
         inputPanel_1017.add(setButton_1017);
         
         panelArray_1017 = new JPanel();
@@ -66,12 +68,10 @@ public class InsertionSortGUI_2511531017 extends JFrame {
         stepArea_1017.setFont(new Font("Monospaced", Font.PLAIN, 14));
         JScrollPane scrollPane = new JScrollPane(stepArea_1017);
 
-        getContentPane().add(inputPanel_1017, BorderLayout.NORTH);
-        getContentPane().add(panelArray_1017, BorderLayout.CENTER);
-        getContentPane().add(controlPanel_3023, BorderLayout.SOUTH);
-        getContentPane().add(scrollPane, BorderLayout.EAST);
-        inputField_1017 = new JTextField(30);
-        scrollPane.setColumnHeaderView(inputField_1017);
+        add(inputPanel_1017, BorderLayout.NORTH);
+        add(panelArray_1017, BorderLayout.CENTER);
+        add(controlPanel_3023, BorderLayout.SOUTH);
+        add(scrollPane, BorderLayout.EAST);
 
         setButton_1017.addActionListener(e -> setArrayFromInput_1017());
         stepButton_1017.addActionListener(e -> performStep_1017());
@@ -124,7 +124,7 @@ public class InsertionSortGUI_2511531017 extends JFrame {
 				array_1017[j_1017 + 1] = array_1017[j_1017];
 				j_1017--;
 			}
-			array_1017[j_1017 = 1] = key_1017;
+			array_1017[j_1017 + 1] = key_1017;
 			
 			updateLabels_1017();
 			stepLog_1017.append("Hasil: ").append(arrayToString_1017(array_1017)).append("\n\n");
@@ -165,5 +165,11 @@ public class InsertionSortGUI_2511531017 extends JFrame {
 			if (k < arr_1017.length - 1) sb.append(", ");
 		}
 		return sb.toString();
+	}
+	public static void main(String [] args) {
+		SwingUtilities.invokeLater(() -> {
+			InsertionSortGUI_2511531017 gui_1017 = new InsertionSortGUI_2511531017();
+			gui_1017.setVisible(true);
+		});
 	}
 	}
