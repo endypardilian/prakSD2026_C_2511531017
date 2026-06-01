@@ -25,7 +25,7 @@ public class BubleGUI_2511531017 extends JFrame {
 	 * Create the frame.
 	 */
 	public BubleGUI_2511531017() {
-		setTitle("Isertion Sort Langakh per Langkah");
+		setTitle("Buble Sort Langakh per Langkah");
 		setSize(750,400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -41,12 +41,12 @@ public class BubleGUI_2511531017 extends JFrame {
         panelArray_1017 = new JPanel();
         panelArray_1017.setLayout(new FlowLayout());
         
-        JPanel controlPanel_3023 = new JPanel();
+        JPanel controlPanel_1017 = new JPanel();
         stepButton_1017 = new JButton ("Langkah Selanjutnya ");
         resetButton_1017 = new JButton ("Reset");
         stepButton_1017.setEnabled(false);
-        controlPanel_3023.add(stepButton_1017);
-        controlPanel_3023.add(resetButton_1017);
+        controlPanel_1017.add(stepButton_1017);
+        controlPanel_1017.add(resetButton_1017);
         
         stepArea_1017 = new JTextArea(8, 60);
         stepArea_1017.setEditable(false);
@@ -55,7 +55,7 @@ public class BubleGUI_2511531017 extends JFrame {
 
         add(inputPanel_1017, BorderLayout.NORTH);
         add(panelArray_1017, BorderLayout.CENTER);
-        add(controlPanel_3023, BorderLayout.SOUTH);
+        add(controlPanel_1017, BorderLayout.SOUTH);
         add(scrollPane, BorderLayout.EAST);
 
         setButton_1017.addActionListener(e -> setArrayFromInput_1017());
@@ -125,7 +125,7 @@ public class BubleGUI_2511531017 extends JFrame {
 
         resetHighlights_1017();
 
-        StringBuilder stepLog_2017 = new StringBuilder();
+        StringBuilder stepLog_1017 = new StringBuilder();
 
         labelArray_1017[j_1017].setBackground(Color.CYAN);
         labelArray_1017[j_1017 + 1].setBackground(Color.CYAN);
@@ -139,21 +139,21 @@ public class BubleGUI_2511531017 extends JFrame {
             labelArray_1017[j_1017].setBackground(Color.RED);
             labelArray_1017[j_1017 + 1].setBackground(Color.RED);
 
-            stepLog_2017.append("Langkah ").append(stepCount_1017).append(": ")
+            stepLog_1017.append("Langkah ").append(stepCount_1017).append(": ")
                     .append("Menukar elemen ke-").append(j_1017)
                     .append(" (").append(array_1017[j_1017 + 1]).append(")")
                     .append(" dengan ke-").append(j_1017 + 1)
                     .append(" (").append(array_1017[j_1017]).append(")\n");
 
         } else {
-            stepLog_2017.append("Langkah ").append(stepCount_1017).append(": ")
+            stepLog_1017.append("Langkah ").append(stepCount_1017).append(": ")
                     .append("Tidak ada pertukaran antara ke-")
                     .append(j_1017).append(" dan ke-")
                     .append(j_1017 + 1).append("\n");
         }
 
-        stepLog_2017.append("Hasil: ").append(arrayToString_1017(array_1017)).append("\n\n");
-        stepArea_1017.append(stepLog_2017.toString());
+        stepLog_1017.append("Hasil: ").append(arrayToString_1017(array_1017)).append("\n\n");
+        stepArea_1017.append(stepLog_1017.toString());
 
         updateLabels_1017();
 
@@ -180,8 +180,8 @@ public class BubleGUI_2511531017 extends JFrame {
     }
 
     private void updateLabels_1017() {
-        for (int k_2017 = 0; k_2017 < array_1017.length; k_2017++) {
-            labelArray_1017[k_2017].setText(String.valueOf(array_1017[k_2017]));
+        for (int k_1017 = 0; k_1017 < array_1017.length; k_1017++) {
+            labelArray_1017[k_1017].setText(String.valueOf(array_1017[k_1017]));
         }
     }
 
@@ -206,18 +206,18 @@ public class BubleGUI_2511531017 extends JFrame {
         stepCount_1017 = 1;
     }
 
-    private String arrayToString_1017(int[] arr_2017) {
-        StringBuilder sb_2017 = new StringBuilder();
+    private String arrayToString_1017(int[] arr_1017) {
+        StringBuilder sb_1017 = new StringBuilder();
 
-        for (int k_2017 = 0; k_2017 < arr_2017.length; k_2017++) {
-            sb_2017.append(arr_2017[k_2017]);
+        for (int k_1017 = 0; k_1017 < arr_1017.length; k_1017++) {
+            sb_1017.append(arr_1017[k_1017]);
 
-            if (k_2017 < arr_2017.length - 1) {
-                sb_2017.append(", ");
+            if (k_1017 < arr_1017.length - 1) {
+                sb_1017.append(", ");
             }
         }
 
-        return sb_2017.toString();
+        return sb_1017.toString();
     }
 
     public static void main(String[] args) {
